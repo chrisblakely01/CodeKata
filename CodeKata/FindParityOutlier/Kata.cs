@@ -20,4 +20,11 @@ public class Kata
         }
         return -1;
     }
+
+    public static int FindLinq(int[] integers)
+    {
+        var evenNumbers = integers.Where(integer => integer % 2 == 0);
+        var oddNumbers = integers.Where(integer => integer % 2 == 1);
+        return evenNumbers.Count() == 1 ? evenNumbers.First() : oddNumbers.First();
+    }
 }
